@@ -22,7 +22,7 @@ module MultiRecipientThreadedMessages #:nodoc:
         options[:message_thread_class] ||= 'MeesageThread'
         
         unless included_modules.include? InstanceMethods
-          class_inheritable_accessor :options
+          class_attribute :options
           
           table_name = options[:message_class].constantize.table_name
           received_table_name = options[:received_message_class].constantize.table_name

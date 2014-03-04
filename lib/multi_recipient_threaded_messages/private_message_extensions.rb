@@ -22,7 +22,7 @@ module MultiRecipientThreadedMessages # :nodoc:
         options[:message_thread_class] ||= 'MessageThread'
         
         unless included_modules.include? InstanceMethods
-          class_inheritable_accessor :options
+          class_attribute :options
           
           belongs_to :thread,
                      :class_name => options[:message_thread_class],
